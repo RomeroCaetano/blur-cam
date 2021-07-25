@@ -1,6 +1,6 @@
 {
   "name": "blur-cam-stream",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Make a background blur camera image",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
