@@ -6,9 +6,8 @@ import {
   SourcePlayback,
   TFLite,
 } from "./types";
-import { readFileSync } from "fs";
 import { toArrayBuffer } from "./utils";
-
+const fs = require("fs");
 const loadScript = require("load-script2");
 
 declare function createTFLiteSIMDModule(): Promise<TFLite>;
@@ -50,8 +49,10 @@ export class BlurStream {
 
     const newSelectedTFLite = await createTFLiteSIMDModule();
 
-    const modelResponse = readFileSync(`./models/segm_lite_v681.tflite`);
-    const model = toArrayBuffer(modelResponse);
+    const modelResponse = await fetch(
+      "https://github.com/RomeroCaetano/blur-cam/blob/main/src/models/segm_lite_v681.tflite"
+    );
+    const model = await modelResponse.arrayBuffer();
 
     const modelBufferOffset = newSelectedTFLite._getModelBufferMemoryOffset();
 
