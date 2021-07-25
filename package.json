@@ -1,8 +1,12 @@
 {
-  "name": "blur-cam",
-  "version": "0.0.1",
+  "name": "blur-cam-stream",
+  "version": "1.0.0",
   "description": "Make a background blur camera image",
-  "main": "index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "test": "test",
     "build": "tsc",
@@ -23,9 +27,10 @@
   },
   "homepage": "https://github.com/RomeroCaetano/blur-cam#readme",
   "dependencies": {
-    "@types/node": "^16.4.2",
     "@tensorflow/tfjs": "^3.8.0",
     "@types/emscripten": "^1.39.5",
+    "@types/node": "^16.4.2",
+    "load-script2": "^2.0.6",
     "typescript": "^4.3.5"
   }
 }
